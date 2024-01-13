@@ -19,5 +19,10 @@ def filter_list(data):
     return new_data
 
 
+def sorted_by_date(data):
+    """Сотрирует по дате"""
+    sorted_list = sorted(data, key=lambda x: x['date'], reverse=True)
+    return sorted_list
+
 
 
