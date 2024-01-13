@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 
 def open_file(file_name):
     """Функция открытия файла"""
@@ -23,6 +24,14 @@ def sorted_by_date(data):
     """Сотрирует по дате"""
     sorted_list = sorted(data, key=lambda x: x['date'], reverse=True)
     return sorted_list
+
+
+def modify_date(data):
+    """Форматирует дату"""
+    for i in data:
+        format_date = datetime.fromisoformat(i['date'])
+        i['date'] = f'{format_date.day}.{format_date.month}.{format_date.year}'
+    return data
 
 
 
