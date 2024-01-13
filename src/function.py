@@ -46,5 +46,3 @@ def modify_bill(bill):
             i['from'] = f"{i['from'][:-17]} {i['from'][-16:-12]} {i['from'][-12:-10]}** **** {i['from'][-4:]}"
     return bill
 
-
-
