@@ -34,4 +34,17 @@ def modify_date(data):
     return data
 
 
+def modify_bill(bill):
+    """Форматирует реквизиты отправителя и получателя"""
+    for i in bill:
+        i['to'] = f"Счет **{i['to'][-4:]}"
+        if not i.get('from'):
+            continue
+        if "Счет" in i['from']:
+            i['from'] = f"Счет **{i['from'][-4:]}"
+        else:
+            i['from'] = f"{i['from'][:-17]} {i['from'][-16:-12]} {i['from'][-12:-10]}** **** {i['from'][-4:]}"
+    return bill
+
+
 
