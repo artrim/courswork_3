@@ -2,7 +2,7 @@ from config import OPERATIONS
 from function import *
 
 
-file = open_file(OPERATIONS) # Все операции
+file = open_file(OPERATIONS)
 filter_list = filter_list(file)
 sorted_date = sorted_by_date(filter_list)
 modify_date(sorted_date)
